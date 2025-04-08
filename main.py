@@ -71,7 +71,7 @@ def get_latest_weight(exercise_name):
         # 获取该动作的最新一条记录（按时刻排序）
         latest_record = df[df['动作'] == exercise_name].sort_values(by="时刻", ascending=False).head(1)
         if not latest_record.empty:
-            return float(latest_record['每次重量'].values[0])
+            return float(latest_record['每组重量'].values[0])
     return 0  # 如果没有记录，默认重量为0
 
 # 获取今日的训练记录
